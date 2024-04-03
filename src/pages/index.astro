@@ -1,0 +1,519 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import SectionTitle from "../components/SectionTitle.astro";
+import ImageTile from "../components/ImageTile.astro";
+import { Image } from "astro:assets";
+import mePfp from "../images/uconnpfp.jpg";
+import lollydrop from "../images/lollydrop.svg";
+import tasker from "../images/tasker.svg";
+import contacts from "../images/contacts.svg";
+import chrome from "../images/chrome.svg";
+import Link from "../components/Link.astro";
+import moonsound from "../images/moonsound1.png";
+import grid from "../images/grid.png";
+import sourcery from "../images/sourcery.png";
+import DarkModeToggle from "../components/DarkModeToggle.astro";
+---
+
+<Layout title="Alex Mueller, TailwindCSS Design Engineer">
+	<div
+		class="pointer-events-none fixed left-0 right-0 top-0 z-40 mx-auto h-screen w-screen max-w-2xl border-l-2 border-r-2 border-dotted border-gray-300 max-sm:hidden dark:border-gray-700"
+	>
+	</div>
+	<nav
+		class="sticky top-0 z-30 border-b-2 border-dotted border-gray-300 bg-inherit shadow shadow-gray-200 dark:border-gray-700 dark:shadow-gray-800"
+	>
+		<ul class="mx-auto flex max-w-2xl items-center gap-1 p-4 px-6 text-2xl">
+			<li
+				class="font-extended mr-auto text-base font-bold uppercase tracking-wider"
+			>
+				<a href="https://muellr.xyz">muellr ↗</a>
+			</li>
+			<li>
+				<a
+					class="block w-fit rounded-full border-2 border-dotted border-transparent p-2 transition-colors active:bg-gray-900/20 hocus:border-gray-900/20 hocus:bg-gray-900/5 dark:active:bg-gray-100/20 dark:hocus:border-gray-50/10 dark:hocus:bg-gray-100/10"
+					href="https://www.behance.net/muelleralex"
+					title="Behance"
+					aria-label="Behance"
+				>
+					<Icon name="mingcute:behance-line" />
+				</a>
+			</li>
+			<li>
+				<a
+					class="block w-fit rounded-full border-2 border-dotted border-transparent p-2 transition-colors active:bg-gray-900/20 hocus:border-gray-900/20 hocus:bg-gray-900/5 dark:active:bg-gray-100/20 dark:hocus:border-gray-50/10 dark:hocus:bg-gray-100/10"
+					href="https://github.com/mueller-alex"
+					title="GitHub"
+					aria-label="GitHub"
+				>
+					<Icon name="mingcute:github-line" />
+				</a>
+			</li>
+			<li>
+				<a
+					href="https://twitter.com/muellrxyz"
+					class="group relative z-0 block w-fit rounded-full border-2 border-dotted border-transparent p-2 transition-colors duration-100 active:bg-gray-900/20 hocus:border-gray-900/20 hocus:bg-gray-900/10 dark:active:bg-gray-100/20 dark:hocus:border-gray-50/10 dark:hocus:bg-gray-100/10"
+					title="Twitter"
+					aria-label="Twitter"
+				>
+					<Icon
+						class="size-6 transition-all duration-200 ease-spring-1 group-hocus:scale-0 group-hocus:opacity-0"
+						name="mingcute:social-x-line"
+					/>
+					<Icon
+						class="absolute top-2 size-6 scale-0 opacity-0 transition-all duration-200 ease-spring-1 group-hocus:scale-100 group-hocus:opacity-100"
+						name="mingcute:twitter-line"
+					/>
+				</a>
+			</li>
+			<!-- <li>
+				<a
+					class="block w-fit rounded-full border-2 border-dotted border-transparent p-2 transition-all active:bg-gray-900/20 hocus:border-gray-900/20 hocus:bg-gray-900/5 dark:active:bg-gray-100/20 dark:hocus:border-gray-50/10 dark:hocus:bg-gray-100/10"
+					href="mailto:alex@muellr.xyz"
+					title="Email"
+					aria-label="Email"
+				>
+					<Icon name="mingcute:mail-line" />
+				</a>
+			</li> -->
+			<li
+				class="m-2 block w-[2px] self-stretch rounded-full bg-current opacity-20"
+			>
+			</li>
+			<li>
+				<DarkModeToggle />
+			</li>
+		</ul>
+	</nav>
+	<main
+		class="relative mx-auto flex max-w-2xl flex-col gap-6 p-6 pt-0 sm:grid sm:grid-cols-2"
+	>
+		<div
+			class="fixed -inset-6 top-16 z-10 h-20 bg-gradient-to-b from-gray-200 from-10% to-transparent to-80% dark:from-gray-800"
+		>
+		</div>
+		<section id="top" class="col-span-2 space-y-4">
+			<SectionTitle title="👋 Hey Tailwind team!" href="#top" />
+			<div
+				class="font-extended absolute left-0 right-0 top-12 text-center text-[.5rem] font-bold text-gray-950/5 dark:text-white/5"
+			>
+				obligatory waving hand emoji on design portfolio
+			</div>
+			<!-- <p>
+				I'm incredibly excited to tell you more about myself and why
+				I'll be your next Design Engineer!
+			</p> -->
+			<div class="card col-span-2 mb-0 flex gap-4 max-sm:flex-col">
+				<div class="relative h-fit w-fit shrink-0">
+					<Image
+						src={mePfp}
+						alt="Alex Mueller standing in front of a UConn sign."
+						class="aspect-square size-24 rounded-xl object-cover"
+						loading="eager"
+					/>
+
+					<div
+						class="absolute -bottom-1 -right-1 rounded-full border-2 border-dotted border-sky-500 bg-sky-400 p-1 text-xl text-white outline outline-2 outline-gray-100 dark:border-sky-300 dark:outline-gray-700"
+					>
+						<Icon name="mdi:tailwind" />
+					</div>
+				</div>
+				<div class="flex flex-col justify-center">
+					<h1
+						class="font-extended text-2xl font-semibold text-gray-800 sm:text-4xl dark:text-white"
+					>
+						Alex Mueller
+					</h1>
+					<p class="text-md max-w-prose sm:text-2xl">
+						2024 Tailwind Labs Design Engineer
+					</p>
+				</div>
+			</div>
+			<p>
+				My name is Alex Mueller and I'm excited for the opportunity to
+				apply for this role! As soon as I saw the job posting, I knew I
+				had to get to work on an application.
+			</p>
+		</section>
+		<section id="about" class="col-span-2 space-y-4">
+			<SectionTitle
+				href="#about"
+				title="About Me"
+				icon="mingcute:emoji-line"
+				colors="border-yellow-400 bg-yellow-200 text-yellow-800 dark:bg-yellow-600 dark:text-white dark:border-yellow-500"
+			/>
+			<p>
+				Right now, I'm a UX Developer for
+				<Link href="https://corcentric.com">Corcentric,</Link> doing both
+				front end development and interface design. I've spent the last year
+				creating a design system for a brand new platform of products we're
+				developing. As 1 of only 3 designers on the team, I have sole responsibility
+				and ownership over the design system, which has been tricky but rewarding.
+			</p>
+			<p>
+				For one of our current products, I created a mini library of CSS
+				utility classes in SASS, mostly inspired by Tailwind. Our suite
+				of developers primarily focus on back end work, so creating this
+				library has been helpful in allowing them to style components
+				without needing to dive into our already several thousand line
+				long CSS files and add a one off rule.
+			</p>
+			<p>
+				Prior to Corcentric, I graduated from the University of
+				Connecticut in 2022 with a Bachelor of Arts in Digital Media and
+				Design. During my time there, I worked as a UX Engineer at
+				<Link href="https://greenhousestudios.uconn.edu/">
+					Greenhouse Studios,</Link
+				> designing and developing
+				<Link href="https://sourceryapp.org/">Sourcery</Link> and
+				<Link
+					href="https://greenhousestudios.uconn.edu/projects/charles-vr"
+				>
+					CharlesV|R.
+				</Link>
+				Also while in school, I held 3 summer internships with <Link
+					href="https://www.travelers.com/">Travelers</Link
+				>working on their design system and several internal dashboards.
+			</p>
+			<!-- <SectionTitle
+				href="#love"
+				title="I love design."
+				icon="mingcute:heart-line"
+				colors="border-red-400 bg-red-200 text-red-800 dark:bg-red-500 dark:text-white dark:border-red-400"
+			/> -->
+			<h3 class="font-extended font-semibold">
+				Simply put, I love design.
+			</h3>
+			<p>I truly think this is one of my biggest strengths, if not #1.</p>
+			<p>
+				I love the work that I do, which makes it so easy to do it well.
+				Learning how to improve isn't just something I do to advance my
+				career, it's something I'm naturally compelled to do.
+			</p>
+			<p>
+				I started my journey into design when I was a teen. I always had
+				an interest in coding as that's what my dad did for a job, but I
+				had never really coded myself. Since I use the internet so
+				often, I wanted to learn how to make websites.
+			</p>
+			<p>
+				I started by tinkering with some CSS using the browser extension
+				Stylebot (which I still use!) and slowly learned just by messing
+				around with existing websites.
+			</p>
+			<h3 class="font-extended font-semibold">I'm quick to adapt.</h3>
+			<p>
+				Ever since I was a child, I've been a fast learner. Picking up
+				new skills and concepts has always come naturally to me, which
+				has been a huge asset throughout my life. I think in every
+				previous role there's been a new language or framework to learn,
+				and I've consistently been able to start making contributions
+				quicker than expected.
+			</p>
+			<div class="space-y-1">
+				<p>Currently, I have experience working with:</p>
+				<ul class="list-inside list-disc">
+					<li>Vanilla HTML, CSS, JS</li>
+					<li>Bootstrap, TailwindCSS</li>
+					<li>Angular, Vue, Svelte, Astro</li>
+				</ul>
+				<p>
+					This site uses Astro with the Tailwind integration. My <Link
+						href="https://muellr.xyz">portfolio</Link
+					> uses Svelte with Tailwind as well. I enjoy using Astro for
+					its high performance, and Svelte for its developer experience.
+				</p>
+				<p>
+					While working with Angular or Vue was manageable, in terms
+					of JS frameworks, I've actively enjoyed working with Svelte.
+					Astro is great for a static site like this, as it gives you
+					the strengths of a framework, like components, layouts, and
+					modules, without a lot of the performance overhead.
+				</p>
+			</div>
+			<p>
+				I know Tailwind Labs uses a lot of React, so while I've
+				unfortunately never used React in a project before, I of course
+				know of React, and anticipate I would be able to pick it up
+				quite quickly, especially given my experience using other JS
+				frameworks.
+			</p>
+		</section>
+		<div id="work" class="col-span-2 space-y-2">
+			<SectionTitle
+				href="#work"
+				title="My Work"
+				icon="mingcute:components-line"
+				colors="border-violet-400 bg-violet-200 text-violet-800 dark:bg-violet-500 dark:text-white dark:border-violet-400"
+			/>
+			<p>
+				Throughout my career, I've worked on many projects, some simply
+				code, some simply designs, and some a combo of both. I'd
+				recommend looking at my <Link href="https://muellr.xyz"
+					>portfolio,</Link
+				> which contains more in depth looks at some of my work (though slightly
+				out of date), but here are a few highlights.
+			</p>
+			<div class="card">
+				<Image
+					src={moonsound}
+					alt="An artist page for Lil Uzi Vert, featuring a glassmorphic interface, consisting of a hero image of the artist, with buttons below reading Shuffle and Radio. Below, the artist's latest released album or song, followed by a list of their most popular songs. At the bottom sits a navigation bar with links to Listen, Explore, and Library."
+				/>
+			</div>
+			<h3 class="font-extended text-2xl font-semibold">Moonsound</h3>
+			<p class="!mb-12">
+				Moonsound is a concept for a music player I originally had back
+				in 2015 around the LollyDrop days, now reimagined for an
+				entirely different design landscape. I'm a big fan of glass and
+				blur effects in design, so I took this as an opportunity to
+				experiment with those.
+			</p>
+			<div
+				class="aspect-[9/14] max-h-[90vh] w-full max-sm:aspect-[9/18] max-sm:px-4"
+			>
+				<iframe
+					class="h-full w-full rounded-3xl border-2 border-dotted border-white/20"
+					src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com/proto/3hZxdIKmSWdHoEKCBFbbNv/Leisurely-Prototype?page-id=0%3A1&type=design&node-id=4-2239&t=z7W8VCi9l92h8pxM-0&scaling=scale-down&starting-point-node-id=4%3A2239&hide-ui=1"
+					allowfullscreen
+					loading="lazy"></iframe>
+			</div>
+			<h3 class="font-extended text-2xl font-semibold">Leisurely</h3>
+			<p>
+				Leisurely is a concept I created in college for a fellow
+				student's startup idea: an inspired take on a new clothes
+				shopping experience. I was given free rein over the branding and
+				UI, so I decided to go with a bold black and white look, putting
+				focus on the clothes.
+			</p>
+			<p class="!mb-12">
+				You can view the prototype separately <Link
+					href="https://figma.com/proto/3hZxdIKmSWdHoEKCBFbbNv/Leisurely-Prototype?page-id=0%3A1&type=design&node-id=4-2239&t=z7W8VCi9l92h8pxM-0&scaling=scale-down&starting-point-node-id=4%3A2239&hide-ui=1"
+					>on Figma.</Link
+				>
+			</p>
+			<div class="card">
+				<Image
+					src={grid}
+					alt="The howdoesgrid.work website, showing a grid layout with 3 rows and 3 columns, with a gap of 1rem between each row and column."
+					class="rounded-lg"
+				/>
+			</div>
+			<h3 class="font-extended text-2xl font-semibold">
+				howdoesgrid.work
+			</h3>
+			<p>
+				howdoesgrid.work is a simple site I created to aid in the
+				creation of grid layouts using CSS grid. The website allows you
+				to set a name for your grid; define rows, columns, and gaps; and
+				even provides a handy visualization in addition to the CSS
+				required to create such a layout.
+			</p>
+			<p class="!mb-12">
+				You can visit the site <Link
+					href="https://mueller-alex.github.io/howdoesgridwork/"
+					>here</Link
+				> and the source code on <Link
+					href="https://github.com/mueller-alex/howdoesgridwork"
+					>GitHub.</Link
+				>
+			</p>
+			<div class="card">
+				<Image
+					src={sourcery}
+					alt="The Sourcery website, showing a grid layout with 3 rows and 3 columns, with a gap of 1rem between each row and column."
+					class="aspect-video rounded-lg object-cover object-top"
+				/>
+			</div>
+			<h3 class="font-extended text-2xl font-semibold">Sourcery</h3>
+			<p>
+				While working for Greenhouse Studios during college, the main
+				project I worked on was Sourcery. Sourcery is a webapp that
+				grants access to archival documents from anywhere in the world.
+				After selecting choosing one of several supported repositories,
+				a researcher can submit a document request to a "Sourcer," who
+				will attempt to retrieve the document(s) and upload them to
+				Sourcery, where the researcher can then view and download them.
+			</p>
+			<p>
+				As a UX Engineer on this project, I handled both design and
+				front-end development. This was my first experience using Vue,
+				but as I mentioned prior, I was able to pick it up quickly and
+				start contributing actual, deployable code within a week.
+			</p>
+			<p class="!mb-12">
+				You can view my more in-depth exploration into my work for
+				Sourcery on my <Link href="https://muellr.xyz/projects/sourcery"
+					>portfolio</Link
+				>, and you can learn more about Sourcery on <Link
+					href="https://sourceryapp.org">its website.</Link
+				>
+			</p>
+			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+				<ImageTile
+					src={lollydrop}
+					alt="Colorful drop-shaped icon with concentric layers in white, red, yellow, and blue, representing the LollyDrop app."
+					caption="LollyDrop"
+				/>
+				<ImageTile
+					src={tasker}
+					alt="Gear-shaped icon with a yellow lightning bolt through the center, symbolizing the Tasker task management app."
+					caption="Tasker"
+				/>
+				<ImageTile
+					src={contacts}
+					alt="Icon depicting a contact card, the left two thirds blue with a white user glyph inside, and the last third grey with 3 grey lines representing contact information."
+					caption="Contacts"
+				/>
+				<ImageTile
+					src={chrome}
+					alt="Circular icon with red, yellow, and green segments around a blue center, evoking the Chrome browser logo with Material Design styling."
+					caption="Chrome"
+				/>
+			</div>
+			<h3 class="font-extended text-2xl font-semibold">LollyDrop</h3>
+			<p>
+				As an Android nerd, the launch of Google's Material Design in
+				2014 was really what got me hooked on design. I loved (and still
+				love) the focus on depth and smooth motion. I especially loved
+				the look of the new app icons, enough so that I learned how to
+				make my own.
+			</p>
+			<p>
+				In 2015, I released LollyDrop, a free Android icon pack giving
+				apps new and old the Material Design treatment. It eventually
+				reached just over 71,000 downloads on the Google Play Store,
+				which is more than I ever could have imagined.
+			</p>
+
+			<!-- <p>
+				CSS in particular feels like a puzzle to be solved. Sometimes
+				you have the box to look at, sometimes that final image is just
+				sitting in your brain somewhere.
+			</p>
+			<p>
+				In practice, I tend to do a bit of both. I jump straight into
+				high fidelity mockups — Figma makes it too easy — conjuring up a
+				basic layout and some components, then turning to code to truly
+				iterate on the design. I commonly find that actually
+				implementing the design can expose flaws that I wouldn't have
+				seen otherwise, and new ideas I wouldn't have thought of
+				otherwise.
+			</p>
+
+			<p>I love puzzles, and I love helping people</p> -->
+		</div>
+		<div
+			id="tailwind"
+			class="relative col-span-2 mb-12 flex w-full flex-col justify-between gap-4"
+		>
+			<SectionTitle
+				href="#tailwind"
+				title="Alex + Tailwind"
+				icon="mdi:tailwind"
+				colors="bg-sky-500 text-white border-sky-400"
+			/>
+			<p>
+				Thank you for taking the time to read through this, and I hope
+				you liked what you saw! This sounds like a dream job for me, so
+				I'm incredibly happy for the opportunity to apply. I've been a
+				big fan and proponent of Tailwind since I started using it, and
+				the idea of getting able to actually contribute to it sounds
+				amazing.
+			</p>
+			<p>
+				I am definitely earlier in my career than other applicants will
+				be, but I think that's not a bad thing. I'm eager to learn and
+				grow, and don't come with a lot of preconceived notions about
+				how things should be done.
+			</p>
+			<p>
+				I love the flexibilty and velocity that a small team holds. My
+				experience with Greenhouse Studios was with around 15 people
+				total, and I loved the amount of freedom that came with that.
+				Having trustworthy and skilled coworkers made it easy for things
+				to get done, as there didn't have to be a massive ticketing
+				system with strict workflows that only some people can create,
+				yada, yada, yada.
+			</p>
+			<p>
+				I'd love to hear from you, whether it's to talk more about this
+				opportunity, or simply if you had any feedback on how I could
+				improve!
+			</p>
+			<p>
+				Below I have my portfolio linked along with some of my social
+				profiles. Once again, thank you for the opportunity, and I hope
+				to hear from you soon!
+			</p>
+			<a
+				class="group relative mx-auto flex w-fit flex-1 items-center justify-between rounded-full border-4 border-dotted border-sky-500 bg-sky-400 p-2 text-4xl text-white transition-all duration-500 ease-spring-1 active:translate-y-1 active:scale-100 hocus:rotate-[1turn] hocus:scale-110 dark:border-sky-200"
+				href="mailto:alex@muellr.xyz"
+			>
+				<Icon
+					name="mingcute:mail-line"
+					class="blur-none transition-all duration-500 ease-spring-2 group-hocus:opacity-0 group-hocus:blur-sm"
+				/>
+				<Icon
+					name="mingcute:send-line"
+					class="absolute right-[.675rem] top-2 rotate-45 opacity-0 blur-sm transition-all duration-500 ease-spring-2 group-hocus:opacity-100 group-hocus:blur-none"
+				/>
+			</a>
+			<ul
+				class="mx-auto flex max-w-2xl items-center gap-1 text-2xl max-sm:flex-col"
+			>
+				<li>
+					<a
+						class="flex w-fit items-center gap-2 rounded-full border-2 border-dotted border-transparent p-2 transition-colors active:bg-gray-900/20 hocus:border-gray-900/20 hocus:bg-gray-900/5 dark:active:bg-gray-100/20 dark:hocus:border-gray-50/10 dark:hocus:bg-gray-100/10"
+						href="https://muellr.xyz"
+						title="Portfolio"
+						aria-label="Portfolio"
+					>
+						<Icon name="mingcute:compass-line" />
+						<div class="text-xl font-semibold">Portfolio</div>
+					</a>
+				</li>
+				<li>
+					<a
+						class="flex w-fit items-center gap-2 rounded-full border-2 border-dotted border-transparent p-2 transition-colors active:bg-gray-900/20 hocus:border-gray-900/20 hocus:bg-gray-900/5 dark:active:bg-gray-100/20 dark:hocus:border-gray-50/10 dark:hocus:bg-gray-100/10"
+						href="https://www.behance.net/muelleralex"
+						title="Behance"
+						aria-label="Behance"
+					>
+						<Icon name="mingcute:behance-line" />
+						<div class="text-xl font-semibold">Behance</div>
+					</a>
+				</li>
+				<li>
+					<a
+						class="flex w-fit items-center gap-2 rounded-full border-2 border-dotted border-transparent p-2 transition-colors active:bg-gray-900/20 hocus:border-gray-900/20 hocus:bg-gray-900/5 dark:active:bg-gray-100/20 dark:hocus:border-gray-50/10 dark:hocus:bg-gray-100/10"
+						href="https://github.com/mueller-alex"
+						title="GitHub"
+						aria-label="GitHub"
+					>
+						<Icon name="mingcute:github-line" />
+						<div class="text-xl font-semibold">GitHub</div>
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://twitter.com/muellrxyz"
+						class="group relative z-0 flex w-fit items-center gap-2 rounded-full border-2 border-dotted border-transparent p-2 transition-colors duration-100 active:bg-gray-900/20 hocus:border-gray-900/20 hocus:bg-gray-900/10 dark:active:bg-gray-100/20 dark:hocus:border-gray-50/10 dark:hocus:bg-gray-100/10"
+						title="Twitter"
+						aria-label="Twitter"
+					>
+						<Icon
+							class="size-6 transition-all duration-200 ease-spring-1 group-hocus:scale-0 group-hocus:opacity-0"
+							name="mingcute:social-x-line"
+						/>
+						<Icon
+							class="absolute top-[10px] size-6 scale-0 opacity-0 transition-all duration-200 ease-spring-1 group-hocus:scale-100 group-hocus:opacity-100"
+							name="mingcute:twitter-line"
+						/>
+						<div class="text-xl font-semibold">Twitter</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</main>
+</Layout>

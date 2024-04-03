@@ -1,0 +1,38 @@
+---
+type Props = {
+	href: string;
+	class?: string;
+};
+
+const { href, class: providedProps, ...props } = Astro.props;
+import { Icon } from "astro-icon/components";
+---
+
+<a
+	href={href}
+	{...props}
+	class="relative inline-flex transition-all items-center gap-[.125rem] font-medium text-blue-950 group dark:text-blue-200 before:bg-blue-500/20 before:duration-200 hocus:scale-110 hocus:before:border-2 before:border-dotted before:ease-spring-2 hocus:before:bg-blue-500/20 dark:hocus:before:bg-blue-400/30 dark:selection:bg-blue-300 dark:before:bg-blue-300 focus:outline-none focus:before:ring-2 before:border-blue-500/20 before:backdrop-blur-xl
+    hocus:before:border-blue-500/20 dark:hocus:before:border-blue-200/20 active:scale-100 active:translate-y-1
+    dark:before:border-blue-300 focus:before:ring-blue-500 focus:before:ring-offset-transparent {{providedProps}}"
+>
+	<slot /></a
+>
+
+<style>
+	a::before {
+		content: "";
+		position: absolute;
+		inset: -2px;
+		bottom: 0;
+		inset-inline: 0;
+		top: calc(100% - 2px);
+		z-index: -1;
+		transition-property: all;
+		transform-origin: 50% 100%;
+	}
+	a:hover::before,
+	a:focus::before {
+		inset: -4px;
+		border-radius: 8px;
+	}
+</style>

@@ -1,0 +1,86 @@
+---
+type Props = {
+	href?: string;
+	title: string;
+	colors?: string;
+	icon?: string;
+};
+
+const {
+	href,
+	title,
+	colors = "border-gray-300 bg-gray-100 dark:bg-gray-700 dark:border-gray-600",
+	icon,
+} = Astro.props;
+// randomly choose positive or negative rotation
+// const rotate = Math.random() > 0.5 ? "hover:rotate-1" : "hover:-rotate-1";
+import { Icon } from "astro-icon/components";
+const Element = href ? "a" : "div";
+---
+
+<!-- <div class="sticky top-[4.625rem] z-10 pt-4">
+	<div
+		class="absolute -inset-6 -bottom-4 top-0 -z-10 bg-gradient-to-b from-gray-200 from-70% to-transparent dark:from-gray-800"
+	>
+	</div>
+	<div
+		class=`font-extended ${colors} mx-auto flex items-center justify-center  gap-2 rounded-2xl border-2 border-dotted p-2 text-lg font-semibold shadow-lg shadow-gray-200 dark:shadow-gray-800 outline outline-1 outline-white/20
+		dark:outline-gray-900/20 outline outline-1 outline-white/20 dark:outline-gray-900/20`
+	>
+		{icon && <Icon name={icon} class="text-2xl" />}
+		{title}
+	</div>
+</div> -->
+<Element
+	class=`section-title group font-extended ${colors} mx-auto w-fit flex items-center justify-center gap-2 rounded-2xl border-2 border-dotted p-2 pe-3 ps-4 text-lg font-semibold ${href ? 'active:scale-100 hover:scale-110' : ''} transition-all shadow-lg shadow-gray-200 dark:shadow-gray-800 outline outline-1 outline-white/20
+	dark:outline-gray-900/20 outline outline-1 outline-white/20 dark:outline-gray-900/20 sticky top-[5.65rem] z-10 mt-4`
+	{href}
+>
+	{icon && <Icon name={icon} class="text-2xl" />}
+	<h2>
+		{title}
+	</h2>
+	<Icon
+		name="mingcute:arrow-to-up-fill"
+		class="w-0 text-xl transition-all group-hover:w-5"
+	/>
+</Element>
+<!-- <div
+	class=` font-extended ${colors} flex w-fit flex-col justify-center gap-2 rounded-2xl border-2 border-dotted p-2 text-lg font-semibold shadow-lg shadow-gray-200 dark:shadow-gray-800`
+>
+	<Icon name={icon} class="text-2xl" />
+	{title}
+</div> -->
+<script>
+	const rotations = [
+		"hover:rotate-1",
+		"hover:-rotate-1",
+		"hover:rotate-2",
+		"hover:-rotate-2",
+		"hover:rotate-3",
+		"hover:-rotate-3",
+	];
+	let titles = document.querySelectorAll("a.section-title");
+	// on hover, swap out the rotation class
+	titles.forEach((title) => {
+		title.addEventListener("mouseenter", () => {
+			const randomRotation =
+				rotations[Math.floor(Math.random() * rotations.length)];
+			title.classList.add(randomRotation);
+		});
+		title.addEventListener("mouseleave", () => {
+			rotations.forEach((rotation) => title.classList.remove(rotation));
+		});
+	});
+	// on mouse down, swap the rotation class
+	titles.forEach((title) => {
+		title.addEventListener("mousedown", () => {
+			const randomRotation =
+				rotations[Math.floor(Math.random() * rotations.length)];
+			title.classList.add(randomRotation);
+		});
+		title.addEventListener("mouseup", () => {
+			rotations.forEach((rotation) => title.classList.remove(rotation));
+		});
+	});
+</script>

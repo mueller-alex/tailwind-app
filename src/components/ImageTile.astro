@@ -1,0 +1,26 @@
+---
+type Props = {
+	src: ImageMetadata;
+	alt: string;
+	caption: string;
+	loading?: "lazy" | "eager";
+};
+
+const { src, alt, caption, loading = "lazy" } = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<figure class="card relative flex flex-col items-center gap-4">
+	<Image
+		{src}
+		{alt}
+		class="img dark:drop-shadow-dark drop-shadow-light w-full p-4"
+		{loading}
+		quality="max"
+	/>
+	<figcaption
+		class="font-extended w-full rounded-xl border-2 border-dotted border-gray-400/20 bg-gray-200 p-2 px-4 text-center font-semibold text-gray-700 backdrop-blur transition-opacity dark:bg-gray-800 dark:text-white"
+	>
+		{caption}
+	</figcaption>
+</figure>

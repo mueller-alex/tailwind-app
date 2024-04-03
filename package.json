@@ -1,0 +1,29 @@
+{
+	"name": "tailwind-app",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/tailwind": "^5.1.0",
+		"astro": "^4.5.8",
+		"astro-devtool-breakpoints": "^0.3.0",
+		"astro-icon": "^1.1.0",
+		"astro-page-insight": "^0.5.3",
+		"tailwindcss": "^3.4.1"
+	},
+	"devDependencies": {
+		"@iconify-json/mdi": "^1.1.64",
+		"@iconify-json/mingcute": "^1.1.16",
+		"@iconify-json/tabler": "^1.1.109",
+		"@types/bun": "^1.0.12",
+		"prettier": "^3.2.5",
+		"prettier-plugin-astro": "^0.13.0",
+		"prettier-plugin-tailwindcss": "^0.5.12"
+	}
+}

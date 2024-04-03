@@ -1,0 +1,63 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+	id="darkmodetoggle"
+	class="block w-fit cursor-pointer rounded-full border-2 border-dotted border-transparent p-2 transition-all active:scale-95 active:bg-gray-900/20 hocus:border-gray-900/20 hocus:bg-gray-900/5 dark:active:bg-gray-100/20 dark:hocus:border-gray-50/10 dark:hocus:bg-gray-100/10"
+>
+	<div class="relative">
+		<Icon
+			name="mingcute:sun-line"
+			class="sun-icon transition-all duration-100 ease-spring-2"
+		/>
+		<Icon
+			name="mingcute:moon-line"
+			class="moon-icon absolute inset-0 scale-0 transition-all duration-100 ease-spring-2"
+		/>
+	</div>
+</div>
+<script>
+	// check if theme preference is set in local storage
+	if (
+		localStorage.theme === "dark" ||
+		(!("theme" in localStorage) &&
+			window.matchMedia("(prefers-color-scheme: dark)").matches)
+	) {
+		document.documentElement.classList.add("dark");
+		document.querySelector(".sun-icon").classList.add("scale-0", "blur-xl");
+		document
+			.querySelector(".moon-icon")
+			.classList.remove("scale-0", "blur-xl");
+	} else {
+		document
+			.querySelector(".sun-icon")
+			.classList.remove("scale-0", "blur-xl");
+		document
+			.querySelector(".moon-icon")
+			.classList.add("scale-0", "blur-xl");
+	}
+	// on click of #darkmodetoggle, toggle dark mode class on body
+	document.getElementById("darkmodetoggle").addEventListener("click", () => {
+		console.log("clicked");
+		document.documentElement.classList.toggle("dark");
+		// add preference to local storage
+		if (document.documentElement.classList.contains("dark")) {
+			localStorage.theme = "dark";
+			document
+				.querySelector(".sun-icon")
+				.classList.add("scale-0", "blur-xl");
+			document
+				.querySelector(".moon-icon")
+				.classList.remove("scale-0", "blur-xl");
+		} else {
+			localStorage.theme = "light";
+			document
+				.querySelector(".sun-icon")
+				.classList.remove("scale-0", "blur-xl");
+			document
+				.querySelector(".moon-icon")
+				.classList.add("scale-0", "blur-xl");
+		}
+	});
+</script>
